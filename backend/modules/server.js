@@ -1,9 +1,11 @@
+import config from '../config/config.js'
 import express from 'express'
+import routerCategories from '../routes/categories.routes.js'
 
 export default class Server {
   constructor () {
     this.app = express()
-    this.port = 10101
+    this.port = config.port
     this.routes()
   }
 
@@ -12,8 +14,6 @@ export default class Server {
   }
 
   routes () {
-    this.app.get('/api', (req, res) => {
-      res.send('Hola Mundo')
-    })
+    this.app.use('/api', routerCategories)
   }
 }
