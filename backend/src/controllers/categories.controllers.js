@@ -1,3 +1,4 @@
+// import sequelize from '../database/sequelize.js'
 
 export default class CategoriesControllers {
   static getCategories (req, res) {
